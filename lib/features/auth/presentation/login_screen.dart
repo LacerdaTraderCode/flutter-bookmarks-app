@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../app/app_routes.dart';
 import '../../../core/session/session_controller.dart';
+import '../../../core/widgets/form_widgets.dart';
 import '../application/auth_service.dart';
 import '../domain/auth_models.dart';
 import '../domain/auth_validation.dart';
@@ -69,7 +70,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
               color: Theme.of(context).colorScheme.secondaryContainer,
               borderRadius: BorderRadius.circular(8),
             ),
-            child: const Text('Your session expired. Sign in again to continue.'),
+            child: const Text(
+              'Your session expired. Sign in again to continue.',
+            ),
           ),
           const SizedBox(height: 16),
         ],
