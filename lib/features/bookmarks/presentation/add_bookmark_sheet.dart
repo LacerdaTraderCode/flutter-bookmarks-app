@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../auth/presentation/auth_page.dart';
+import '../../../core/widgets/form_widgets.dart';
 import '../application/bookmarks_controller.dart';
 import '../domain/bookmark_validation.dart';
 
