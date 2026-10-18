@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../app/app_routes.dart';
+import '../../../core/widgets/form_widgets.dart';
 import '../application/auth_service.dart';
 import '../domain/auth_models.dart';
 import '../domain/auth_validation.dart';
