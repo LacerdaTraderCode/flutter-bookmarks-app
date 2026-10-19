@@ -30,9 +30,8 @@ class BookmarkFilters {
 
   /// Query parameters understood by `GET /bookmarks`.
   Map<String, String> toQuery() {
-    final currentTag = tag;
     return {
-      if (currentTag != null) 'tag': currentTag,
+      'tag': ?tag,
       if (readState == ReadState.read) 'is_read': 'true',
       if (readState == ReadState.unread) 'is_read': 'false',
     };
