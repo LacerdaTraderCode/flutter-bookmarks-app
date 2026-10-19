@@ -1,0 +1,19 @@
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+coverage/
+
+.idea/
+.vscode/
+*.iml
+
+# Platform folders are generated with `flutter create .` (see the README) and are not committed here.
+/android/
+/ios/
+/linux/
+/macos/
+/web/
+/windows/
+.metadata
