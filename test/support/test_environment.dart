@@ -35,19 +35,29 @@ class TestEnvironment {
   final FakeBookmarkRepository bookmarkRepository;
   final FakeLinkOpener linkOpener = FakeLinkOpener();
 
-  List<Override> get overrides => [
-    tokenStoreProvider.overrideWithValue(tokenStore),
-    authRepositoryProvider.overrideWithValue(authRepository),
-    bookmarkRepositoryProvider.overrideWithValue(bookmarkRepository),
-    linkOpenerProvider.overrideWithValue(linkOpener),
-  ];
-
   /// The whole app, with the router and every screen, running on the fakes.
-  Widget app() => ProviderScope(overrides: overrides, child: const BookmarksApp());
+  Widget app() {
+    return ProviderScope(
+      overrides: [
+        tokenStoreProvider.overrideWithValue(tokenStore),
+        authRepositoryProvider.overrideWithValue(authRepository),
+        bookmarkRepositoryProvider.overrideWithValue(bookmarkRepository),
+        linkOpenerProvider.overrideWithValue(linkOpener),
+      ],
+      child: const BookmarksApp(),
+    );
+  }
 
   /// A container without any widgets, for controller and service tests.
   ProviderContainer container() {
-    final container = ProviderContainer(overrides: overrides);
+    final container = ProviderContainer(
+      overrides: [
+        tokenStoreProvider.overrideWithValue(tokenStore),
+        authRepositoryProvider.overrideWithValue(authRepository),
+        bookmarkRepositoryProvider.overrideWithValue(bookmarkRepository),
+        linkOpenerProvider.overrideWithValue(linkOpener),
+      ],
+    );
     addTearDown(container.dispose);
     return container;
   }
